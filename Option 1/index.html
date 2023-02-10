@@ -20,11 +20,11 @@
   </script>
   </head>
   <body>
-    <h1>Test favicon</h1>
-
-<h1 id="folder-name"></h1>
+    <h1 id="folder-name"></h1>
 <script>
-  document.getElementById("folder-name").innerHTML = window.location.pathname.split("/").pop();
+  var path = window.location.pathname;
+  var folder = path.substring(0, path.lastIndexOf("/"));
+  document.getElementById("folder-name").innerHTML = folder.split("/").pop();
 </script>
 
 
