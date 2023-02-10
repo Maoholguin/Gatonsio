@@ -20,14 +20,12 @@
   </script>
   </head>
   <body>
-    <h1 id="folder-name"></h1>
+<h1 id="folder-name"></h1>
 <script>
-  var path = window.location.pathname;
+  var path = decodeURI(window.location.pathname);
   var folder = path.substring(0, path.lastIndexOf("/"));
   document.getElementById("folder-name").innerHTML = folder.split("/").pop();
 </script>
-
-
     <img src="android-chrome-192x192.png">
     <p>Hey! Look at the favicon</p>
  <h1>Download all files in this folder from here! Cool right?</h1>
