@@ -5,10 +5,26 @@
     <title>Test favicon</title>
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="manifest" href="/site.webmanifest" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $.getJSON("https://api.github.com/repos/Maoholguin/Gatonsio/contents/Option 1",
+      function(data){
+        for (var i = 0; i < data.length; i++) {
+          var file = data[i];
+          $("#list").append("<li><a href='" + file.download_url + "'>" + file.name + "</a></li>");
+        }
+      }
+    );
+  });
+  </script>
   </head>
   <body>
-    <h1>Option 1</h1>
+    <h1>Test favicon</h1>
     <img src="android-chrome-192x192.png">
     <p>Hey! Look at the favicon</p>
+ <h1>Download files from GitHub folder</h1>
+  <ul id="list">
+  </ul>
   </body>
 </html>
