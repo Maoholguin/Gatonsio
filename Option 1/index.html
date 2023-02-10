@@ -20,11 +20,17 @@
   </script>
   </head>
   <body>
-    <h1><?php echo basename(__DIR__); ?></h1>
+    <h1>Test favicon</h1>
+
+<h1 id="folder-name"></h1>
+<script>
+  document.getElementById("folder-name").innerHTML = window.location.pathname.split("/").pop();
+</script>
+
 
     <img src="android-chrome-192x192.png">
     <p>Hey! Look at the favicon</p>
- <h1>Download files in this folder from here! Cool right?</h1>
+ <h1>Download all files in this folder from here! Cool right?</h1>
   <ul id="list">
   </ul>
   </body>
