@@ -28,7 +28,7 @@
           canvas.toBlob(function(blob) {
             const formData = new FormData();
             formData.append('image', blob, file.name);
-            fetch('/transform', {
+            fetch('transform.php', {
               method: 'POST',
               body: formData
             })
@@ -36,6 +36,7 @@
             .then(blob => {
               const imageUrl = URL.createObjectURL(blob);
               const resultImage = document.getElementById('resultImage');
+              resultImage.setAttribute('src', 'data:image/jpeg;base64,' + btoa(imageUrl));
               resultImage.src = imageUrl;
             });
           }, 'image/jpeg', 1);
